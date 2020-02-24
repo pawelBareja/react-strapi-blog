@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "blogposts",
+  "info": {
+    "name": "blogpost",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "required": true,
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "author": {
+      "model": "permission",
+      "via": "blogpost",
+      "plugin": "users-permissions"
+    },
+    "kategorias": {
+      "collection": "category",
+      "dominant": true,
+      "via": "blogposts"
+    }
+  }
+}
